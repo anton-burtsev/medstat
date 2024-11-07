@@ -3,11 +3,11 @@
 ~~~ sql
 CREATE INDEX idx_organization_versions_parent_id
 ON public.organization_versions(parent_id, organization_id)
-INCLUDE(year,version,is_active);
+INCLUDE(year,version,is_active,id);
 
 CREATE INDEX idx_organization_versions_organization_id
 ON public.organization_versions(organization_id, parent_id)
-INCLUDE(year,version,is_active);
+INCLUDE(year,version,is_active,id);
 ~~~
 
 Запрос
